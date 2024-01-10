@@ -49,6 +49,7 @@ def startBattle(participants):
     
     while(battleOver == False):
         printNames(participants)
+        time.sleep(SLEEP)
         
         # Check if counter == 0 for any players/enemies
         for participant in participants:
@@ -67,8 +68,7 @@ def startBattle(participants):
         for participant in participants:
             participant.counter -= 1    
         print("Counter decremented")
-        participants.sort(key= getCounter)
-        time.sleep(SLEEP)
+        participants.sort(key= getCounter)   
     
 player1 = playable(PLAYER, "Platz", 11, "Quad Beam")
 player2 = playable(PLAYER, "Maddox", 8, "Pec Slam")
