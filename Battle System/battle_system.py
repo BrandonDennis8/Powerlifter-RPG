@@ -1,15 +1,6 @@
 import time
-
-PLAYER = 1
-ENEMY = 2
-
-
-USE_ITEM = 2
-REG_ATTACK = 3
-SPECIAL_ATTACK = 5
-OVERDRIVE = 7
-
-
+from assist_functions import *
+from battle_constants import *
 
 class playable:
     def __init__(self, Player, Name, Speed, Overdrive):
@@ -20,16 +11,13 @@ class playable:
 
     counter = 0
     
-def getSpeed(obj):
-    return obj.speed
-    
 def playerAttack(player):
     time.sleep(1)
     print(f"\n{player.name}'s turn:\n  [1] Attack\n  [2] Item\n  [3] Overdrive")
     validInput = False
 
     while(validInput == False):
-        validInput = True
+        validInput = True # avoid a bunch of break statements
         choice = input()
 
         match choice:
@@ -58,9 +46,10 @@ def startBattle(participants):
     battleOver = False
     participants.sort(key= getSpeed, reverse=True)
     print("\n*** battle start ***")
-    printNames(participants)
     
     while(battleOver == False):
+        printNames(participants)
+        
         # Check if counter == 0 for any players/enemies
         for participant in participants:
             if(participant.counter == 0):
@@ -76,13 +65,9 @@ def startBattle(participants):
 
         # Decrement all counters
         for participant in participants:
-            participant.counter -= 1
-
-
-def printNames(participants):
-    for player in participants:
-        print(player.name)
-    
+            participant.counter -= 1    
+        print("Counter decremented")
+        participants.sort(key= getCounter)
     
 player1 = playable(PLAYER, "Platz", 11, "Quad Beam")
 player2 = playable(PLAYER, "Maddox", 8, "Pec Slam")
