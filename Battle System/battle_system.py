@@ -12,7 +12,6 @@ class playable:
     counter = 0
     
 def playerAttack(player):
-    time.sleep(1)
     print(f"\n{player.name}'s turn:\n  [1] Attack\n  [2] Item\n  [3] Overdrive")
     validInput = False
 
@@ -33,12 +32,13 @@ def playerAttack(player):
             case _:
                 print("incorrect action, try again")
                 validInput = False
+    time.sleep(SLEEP)
 
 def enemyAttack(enemy):
-    time.sleep(1)
     print(f"\n{enemy.name}'s turn")
     print(f"{enemy.name} attacks!\n")
     enemy.counter += REG_ATTACK
+    time.sleep(SLEEP)
 
 
 def startBattle(participants):
@@ -68,6 +68,7 @@ def startBattle(participants):
             participant.counter -= 1    
         print("Counter decremented")
         participants.sort(key= getCounter)
+        time.sleep(SLEEP)
     
 player1 = playable(PLAYER, "Platz", 11, "Quad Beam")
 player2 = playable(PLAYER, "Maddox", 8, "Pec Slam")

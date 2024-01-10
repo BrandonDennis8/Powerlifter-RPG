@@ -1,6 +1,7 @@
+SLEEP = 2
+
 PLAYER = 1
 ENEMY = 2
-
 
 USE_ITEM = 2
 REG_ATTACK = 3

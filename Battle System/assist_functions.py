@@ -8,6 +8,6 @@ def printNames(participants):
     print("Order of queue:")
     order = 1
     for player in participants:
-        print(f"{order}: {player.name}")
+        print(f"{order}: {player.name}, C={player.counter}")
         order += 1
     print("")
