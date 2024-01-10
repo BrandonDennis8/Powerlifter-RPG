@@ -22,14 +22,28 @@ def getSpeed(obj):
     
 def playerAttack(player):
     print(f"{player.name}'s turn:\n  [1] Attack\n  [2] Item")
-    choice = input()
-    print(f"{player.name} Attacks!")
-    player.counter += 3
+    validInput = False
+
+    while(validInput == False):
+        validInput = True
+        choice = input()
+
+        match choice:
+            case "1":
+                print(f"{player.name} attacks!")
+            case "2":
+                print(f"{player.name} used an item!")
+            case _:
+                print("incorrect action, try again")
+                validInput = False
+
+    
+    player.counter += REG_ATTACK
 
 def enemyAttack(enemy):
     print(f"{enemy.name}'s turn")
-    print(f"{enemy.name} Attacks!")
-    enemy.counter += 3
+    print(f"{enemy.name} attacks!")
+    enemy.counter += REG_ATTACK
 
 
 def startBattle(participants):
