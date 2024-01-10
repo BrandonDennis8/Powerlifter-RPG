@@ -1,3 +1,7 @@
+import time
+
+SLEEP = 2
+
 def getSpeed(obj):
     return obj.speed
 
@@ -11,3 +15,6 @@ def printNames(participants):
         print(f"{order}: {player.name}, C={player.counter}")
         order += 1
     print("")
+
+def sleep():
+    time.sleep(SLEEP)

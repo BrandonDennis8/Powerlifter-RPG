@@ -1,5 +1,3 @@
-SLEEP = 2
-
 PLAYER = 1
 ENEMY = 2
 

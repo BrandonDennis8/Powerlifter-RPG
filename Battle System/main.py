@@ -1,4 +1,4 @@
-import time
+
 from assist_functions import *
 from battle_constants import *
 
@@ -32,13 +32,13 @@ def playerAttack(player):
             case _:
                 print("incorrect action, try again")
                 validInput = False
-    time.sleep(SLEEP)
+    sleep()
 
 def enemyAttack(enemy):
     print(f"\n{enemy.name}'s turn")
     print(f"{enemy.name} attacks!\n")
     enemy.counter += REG_ATTACK
-    time.sleep(SLEEP)
+    sleep()
 
 
 def startBattle(participants):
@@ -48,8 +48,9 @@ def startBattle(participants):
     print("\n*** battle start ***")
     
     while(battleOver == False):
+        # Print order of participants and their clock value
         printNames(participants)
-        time.sleep(SLEEP)
+        sleep()
         
         # Check if counter == 0 for any players/enemies
         for participant in participants:
