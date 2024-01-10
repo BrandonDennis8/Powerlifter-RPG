@@ -1,2 +1,2 @@
 # Powerlifter-RPG
-A JRPG video game about a party of powerlifters
+A JRPG video game about powerlifting
