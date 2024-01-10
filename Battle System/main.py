@@ -48,10 +48,9 @@ def startBattle(participants):
     print("\n*** battle start ***")
     
     while(battleOver == False):
-        # Print order of participants and their clock value
+        # Print order of participants
         printNames(participants)
-        sleep()
-        
+
         # Check if counter == 0 for any players/enemies
         for participant in participants:
             if(participant.counter == 0):
@@ -75,7 +74,7 @@ player1 = playable(PLAYER, "Platz", 11, "Quad Beam")
 player2 = playable(PLAYER, "Maddox", 8, "Pec Slam")
 player3 = playable(PLAYER, "Grigsby", 10, "Deadlift of Doom")
 
-enemy1 = playable(ENEMY, "WADA Employee 1 ", 12, "n/a")
+enemy1 = playable(ENEMY, "WADA Employee 1", 12, "n/a")
 enemy2 = playable(ENEMY, "WADA Employee 2" , 7, "n/a")
 
 party = [player1,player2,player3,enemy1,enemy2]
